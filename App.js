@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View,} from 'react-native';
 import Header from './src/components/Header';
 import Search from './src/components/Search';
-import CategoryItem from './src/components/CategoryItem';
 import { useState } from "react"
+import Categories from './src/components/Categories';
 
 export default function App() {
   // let term = "Burger"
@@ -35,43 +35,20 @@ export default function App() {
     },
   ];
 
-  // setTimeout(() => {
-  //   console.log("initial term: ", term);
-  //   setTerm("Pizza")
-  //   console.log("changed term: ", term);
-  // }, 3000);
 
   return (
     <View style={styles.container}>
       <Header />
-      <Search />
-
-      <View>
-      <FlatList
-      data={commonCategories}
-        renderItem={({item, index}) => {
-        return <CategoryItem name={item.name}
-        imageUrl={item.imageUrl}
-        index={index}
-        active={item.name === term}
-        handlePress={() => setTerm(item.name)}
-           />;
-      }}
-      horizontal
-      showsHorizontalScrollIndicator={false}
-      keyExtractor={(category) => category.name} />
-      </View>
-
+      <Search setTerm={setTerm} />
+      <Categories
+      categories={commonCategories}
+      setTerm={setTerm}
+      term={term} />
       <StatusBar style="auto" />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  // container: {
-  //   flex: 1,
-  //   backgroundColor: '#fff',
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  // },
+
 });
