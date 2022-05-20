@@ -3,8 +3,11 @@ import { StyleSheet, Text, View, FlatList } from 'react-native';
 import Header from './src/components/Header';
 import Search from './src/components/Search';
 import CategoryItem from './src/components/CategoryItem';
+import { useState } from "react"
 
 export default function App() {
+  // let term = "Burger"
+  const [term, setTerm] = useState("Burger")
   const commonCategories = [
     {
       name: "Burger",
@@ -30,7 +33,14 @@ export default function App() {
       name: "Pasta",
       imageUrl: require('./src/assets/images/pasta.png') 
     },
-  ]
+  ];
+
+  // setTimeout(() => {
+  //   console.log("initial term: ", term);
+  //   setTerm("Pizza")
+  //   console.log("changed term: ", term);
+  // }, 3000);
+
   return (
     <View style={styles.container}>
       <Header />
@@ -40,7 +50,12 @@ export default function App() {
       <FlatList
       data={commonCategories}
         renderItem={({item, index}) => {
-        return <CategoryItem name={item.name} imageUrl={item.imageUrl} index={index} />;
+        return <CategoryItem name={item.name}
+        imageUrl={item.imageUrl}
+        index={index}
+        active={item.name === term}
+        handlePress={() => setTerm(item.name)}
+           />;
       }}
       horizontal
       showsHorizontalScrollIndicator={false}

@@ -1,11 +1,17 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import {elevation} from '../common/styles';
 
-function CategoryItem({name, imageUrl, index}) {
+function CategoryItem({name, imageUrl, index, active, handlePress}) {
 
     return (
-        <View style={[styles.container, styles.elevation, index === 0 ? {marginLeft: 25} : {marginLeft: 15}]}> 
+        <TouchableOpacity  onPress={handlePress}>
+        <View style={[
+        styles.container, 
+        styles.elevation, 
+        index === 0 ? {marginLeft: 25} : {marginLeft: 15},
+        active ? {backgroundColor: "rgb(241,186,87)"} : {backgroundColor: "white"}
+        ]}> 
             <View style={styles.imageContainer} >
             <Image style={styles.image} source={imageUrl} />
             </View>
@@ -13,6 +19,7 @@ function CategoryItem({name, imageUrl, index}) {
                 {name}
             </Text>
         </View>
+        </TouchableOpacity>
     );
 }
 
