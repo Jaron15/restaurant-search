@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import React, { useState} from 'react';
 import { TextInput, View, StyleSheet, Text} from 'react-native';
 import {FontAwesome} from "@expo/vector-icons";
 import {elevation} from '../common/styles';
