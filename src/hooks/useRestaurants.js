@@ -18,7 +18,7 @@ const [results, setResults] = useState({
         try {
             const response = await yelp.get('/search', {
                 params: {
-                    limit: 5,
+                    limit: 15,
                     term,
                     location: "Toronto"
                 }
