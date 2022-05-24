@@ -51,6 +51,7 @@ function homeScreen() {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: "rgb(253,253,253)",
+        marginTop: -100
     }
 });
 

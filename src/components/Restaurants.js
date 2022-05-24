@@ -13,9 +13,9 @@ useEffect(() => {
     searchRestaurants(term);
 }, [term])
 
-console.log('====================================');
-console.log({data: data, loading, error});
-console.log('====================================');
+// console.log('====================================');
+// console.log({data: data, loading, error});
+// console.log('====================================');
 
 if(loading) return <ActivityIndicator size="large" marginVertical={30} />
 
