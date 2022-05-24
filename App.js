@@ -7,24 +7,17 @@ import RestaurantScreen from './src/screens/RestaurantScreen';
 const navigator = createStackNavigator({
   Home: HomeScreen,
   Restaurant: RestaurantScreen,
+   
 }, {
   initialRouteName: "Home",
   defaultNavigationOptions: {
     title: "",
-    // headerShown: false,
+    headerStyle: {
+      shadowOpacity: 0
+    }
   },
   
 });
 
 export default createAppContainer(navigator);
 
-
-// function App() {
-//   return (
-     
-// <HomeScreen />
-  
-//   );
-// }
-
-// export default App;

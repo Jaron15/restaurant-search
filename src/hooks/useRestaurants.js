@@ -20,7 +20,7 @@ const [results, setResults] = useState({
                 params: {
                     limit: 15,
                     term,
-                    location: "Toronto"
+                    location: "Phoenix"
                 }
             });
             setResults({

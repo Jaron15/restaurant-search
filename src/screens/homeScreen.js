@@ -34,6 +34,7 @@ function homeScreen() {
       imageUrl: require('../assets/images/pasta.png') 
     },
   ];
+
     return (
         <View style={styles.container}>
       <Header />

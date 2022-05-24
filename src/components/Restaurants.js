@@ -26,6 +26,7 @@ if (error) return (
     );
 
     return (
+        
         <View style={styles.container}>
             <Text style={styles.header}>Top Restaurants</Text>
             <FlatList
@@ -33,7 +34,6 @@ if (error) return (
             keyExtractor={(restaurant) => restaurant.id}
             renderItem ={({item}) => <RestaurantItem restaurant={item} />
             } />
-            
         </View>
     );
 }
@@ -42,14 +42,16 @@ const styles = StyleSheet.create({
     container: {
         marginHorizontal: 25,
         marginVertical: 15,
-     
+        paddingBottom: 1000
+        
     },
     header: {
         fontWeight: "bold",
         fontSize: 20,
         paddingBottom: 10,
         
-    }
+    },
+ 
 })
 
 export default Restaurants;
