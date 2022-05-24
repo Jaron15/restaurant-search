@@ -5,7 +5,7 @@ import {withNavigation} from 'react-navigation';
 
 function RestaurantItem({restaurant, navigation }) {
     return (
-        <TouchableOpacity onPress={() => navigation.navigate("Restaurant", {id: restaurant.id})}>
+        <TouchableOpacity onPress={() => navigation.navigate("Restaurant", {restaurant: restaurant})}>
        <View style={[styles.elevation, styles.container]}>
            <Image style={styles.image} source={{uri: restaurant.image_url}}/>
            <View style={styles.infoContainer}>
