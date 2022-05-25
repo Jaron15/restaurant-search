@@ -2,7 +2,7 @@ import React from 'react';
 import { FlatList, View } from 'react-native';
 import CategoryItem from './CategoryItem';
 
-
+// common categories is passed in from home page as categories 
 function Categories({categories, setTerm, term}) {
     return (
         <View>

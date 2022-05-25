@@ -8,14 +8,10 @@ function Restaurants({term}) {
 
 const [{data, loading, error}, searchRestaurants] = useRestaurants();
 
-
+// runs useRestaurants hook every time the term is changed
 useEffect(() => {
     searchRestaurants(term);
 }, [term])
-
-// console.log('====================================');
-// console.log({data: data, loading, error});
-// console.log('====================================');
 
 if(loading) return <ActivityIndicator size="large" marginVertical={30} />
 
@@ -26,7 +22,7 @@ if (error) return (
     );
 
     return (
-        
+        // homepage list of restaurants
         <View style={styles.container}>
             <Text style={styles.header}>Top Restaurants</Text>
             <FlatList
@@ -43,13 +39,11 @@ const styles = StyleSheet.create({
         marginHorizontal: 25,
         marginVertical: 15,
         paddingBottom: 1000
-        
     },
     header: {
         fontWeight: "bold",
         fontSize: 20,
         paddingBottom: 10,
-        
     },
  
 })

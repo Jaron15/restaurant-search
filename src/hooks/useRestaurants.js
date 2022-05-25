@@ -8,7 +8,7 @@ const [results, setResults] = useState({
     loading: false,
     error: null
 });
-
+    // uses term to search for restaurants by keyword 
     const searchRestaurants = async (term) => {
         setResults({
             data: null,

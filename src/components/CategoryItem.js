@@ -2,10 +2,12 @@ import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import {elevation} from '../common/styles';
 
+// category info passed in from category.js
 function CategoryItem({name, imageUrl, index, active, handlePress}) {
 
     return (
-        <TouchableOpacity  onPress={handlePress}>
+        // handle press sets term to item.name to be used in the useRestaurants hook 
+        <TouchableOpacity onPress={handlePress}>
         <View style={[
         styles.container, 
         styles.elevation, 

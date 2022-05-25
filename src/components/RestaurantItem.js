@@ -3,8 +3,10 @@ import {View, Image, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {elevation} from "../common/styles";
 import {withNavigation} from 'react-navigation';
 
+// homepage restaurant details/cover photo, price, rating
 function RestaurantItem({restaurant, navigation }) {
     return (
+        // Reroutes to restaurantScreen for restaurant clicked on (Touchable) passing in the restaurant object
         <TouchableOpacity onPress={() => navigation.navigate("Restaurant", {restaurant: restaurant})}>
        <View style={[styles.elevation, styles.container]}>
            <Image style={styles.image} source={{uri: restaurant.image_url}}/>

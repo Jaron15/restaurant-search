@@ -7,7 +7,8 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,} from 'react-native';
 
 function homeScreen() {
-    const [term, setTerm] = useState("Burger")
+  // category icons on home page
+    const [term, setTerm] = useState("Burger") 
   const commonCategories = [
     {
       name: "Burger",

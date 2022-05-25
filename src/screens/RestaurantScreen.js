@@ -8,6 +8,7 @@ function RestaurantScreen({navigation}) {
     const [{data, loading, error}, searchRestaurant] = useRestaurant();
     const restaurant = navigation.getParam("restaurant");
 
+  // Singular restaurant search hook  
   useEffect(() => {
         searchRestaurant(restaurant.id);
     }, []);

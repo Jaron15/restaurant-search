@@ -3,6 +3,7 @@ import {TouchableOpacity, View, Text, Clipboard, StyleSheet, Alert} from 'react-
 
 import React from 'react';
 
+// Name of restaurant and location on RestaurantScreen / touchable copies address to clipboard
 function RestaurantInfo({ restaurant }) {
     return (
 <TouchableOpacity onPress={() => {
@@ -16,7 +17,6 @@ function RestaurantInfo({ restaurant }) {
 <Text >{restaurant.location.city}, {restaurant.location.state} {restaurant.location.zip_code}</Text>
 </View>
 </TouchableOpacity>
-
     );
 }
 

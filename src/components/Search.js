@@ -4,9 +4,10 @@ import {FontAwesome} from "@expo/vector-icons";
 import {elevation} from '../common/styles';
 
 function Search({setTerm}) {
-
+    // used to take in and set user input 
     const [input, setInput] = useState("")
 
+    // uses input to set term to be used in the useRestaurants hook 
     const handleEndEditing = () => {
         if (!input) return
         setTerm(input)
